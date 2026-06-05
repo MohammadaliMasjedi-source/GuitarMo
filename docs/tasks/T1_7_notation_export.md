@@ -6,12 +6,12 @@
 Write tab, MIDI and MusicXML.
 
 ## Steps
-- [x] ASCII 6-line tab
+- [x] ASCII tab
 - [x] GM nylon MIDI
-- [x] music21 MusicXML
+- [x] MusicXML
 
 ## Definition of Done
-- [x] All three outputs written and openable
+- [x] All three outputs openable
 
 ## Links
 - Phase: [../phases/PHASE_1_mvp.md](../phases/PHASE_1_mvp.md)

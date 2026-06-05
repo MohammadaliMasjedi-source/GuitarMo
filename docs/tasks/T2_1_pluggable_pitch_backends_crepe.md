@@ -7,7 +7,7 @@ Add a backend interface and CREPE.
 
 ## Steps
 - [ ] PitchBackend interface
-- [ ] CREPE/torchcrepe backend
+- [ ] CREPE backend
 - [ ] --pitch switch
 
 ## Definition of Done

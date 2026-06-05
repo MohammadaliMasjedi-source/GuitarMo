@@ -6,9 +6,9 @@
 Get melody+chord corpora.
 
 ## Steps
-- [ ] Download scripts (Nottingham, etc.)
+- [ ] Download scripts
 - [ ] Record licenses
-- [ ] Cache committed sample
+- [ ] Cache sample
 
 ## Definition of Done
 - [ ] Scripts run; sample cached; licenses noted

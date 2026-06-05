@@ -3,7 +3,7 @@
 **Phase:** Expressive Arrangement · **Status:** ⬜ Planned
 
 ## Objective
-Add an independent voice at pro.
+Independent voice at pro.
 
 ## Steps
 - [ ] Inner-voice generation

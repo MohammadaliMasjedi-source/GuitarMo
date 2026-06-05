@@ -7,11 +7,11 @@ Real score rendering.
 
 ## Steps
 - [ ] alphaTab/VexFlow
-- [ ] PDF via LilyPond/MuseScore
+- [ ] PDF export
 - [ ] GuitarPro export
 
 ## Definition of Done
-- [ ] Rendered notation + PDF download
+- [ ] Rendered notation + PDF
 
 ## Links
 - Phase: [../phases/PHASE_5_app_deploy.md](../phases/PHASE_5_app_deploy.md)

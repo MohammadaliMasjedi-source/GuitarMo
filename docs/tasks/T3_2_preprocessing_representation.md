@@ -8,10 +8,10 @@ Tokenize melody->chord with splits.
 ## Steps
 - [ ] Per-beat tokens
 - [ ] Transpose augment
-- [ ] Seeded train/val/test
+- [ ] Seeded splits
 
 ## Definition of Done
-- [ ] Deterministic dataset built from config
+- [ ] Deterministic dataset from config
 
 ## Links
 - Phase: [../phases/PHASE_3_harmonization_ml.md](../phases/PHASE_3_harmonization_ml.md)

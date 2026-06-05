@@ -7,8 +7,8 @@ WAV -> quantized monophonic melody.
 
 ## Steps
 - [x] pYIN f0
-- [x] Note segmentation w/ gap tolerance
-- [x] Tempo + beat quantization
+- [x] Note segmentation
+- [x] Tempo + quantization
 
 ## Definition of Done
 - [x] A WAV yields a clean Melody

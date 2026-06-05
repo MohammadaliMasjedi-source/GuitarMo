@@ -6,8 +6,8 @@
 Functional harmony scaled by difficulty.
 
 ## Steps
-- [x] Diatonic candidate scoring
-- [x] Cadence logic (V, ii-V-I)
+- [x] Diatonic scoring
+- [x] Cadence logic
 - [x] 9th colours at pro
 
 ## Definition of Done

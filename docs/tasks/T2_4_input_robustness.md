@@ -6,8 +6,8 @@
 Handle messy real input.
 
 ## Steps
-- [ ] HP filter / noise gate / normalize
-- [ ] hum vs whistle detect
+- [ ] Filter/gate/normalize
+- [ ] hum vs whistle
 - [ ] Helpful errors
 
 ## Definition of Done

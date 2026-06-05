@@ -3,12 +3,12 @@
 **Phase:** MVP Engine · **Status:** ✅ Done
 
 ## Objective
-Render plucked-string audio with no binaries.
+Render plucked-string audio, no binaries.
 
 ## Steps
-- [x] Karplus-Strong (vectorized)
-- [x] Attack/release envelope
-- [x] Light reverb
+- [x] Karplus-Strong
+- [x] Envelope
+- [x] Reverb
 
 ## Definition of Done
 - [x] Finite audio normalised to 0.9 peak

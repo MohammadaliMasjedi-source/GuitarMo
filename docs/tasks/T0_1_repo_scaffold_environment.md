@@ -7,11 +7,11 @@ Stand up a clean, reproducible Python project.
 
 ## Steps
 - [x] Package layout + venv
-- [x] requirements.txt / pyproject.toml
+- [x] requirements / pyproject
 - [x] .gitignore
 
 ## Definition of Done
-- [x] pip install succeeds on a clean machine
+- [x] pip install succeeds clean
 - [x] import guitarmo works
 
 ## Links

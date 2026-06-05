@@ -6,11 +6,11 @@
 Capture from a phone.
 
 ## Steps
-- [ ] Mobile recording UI
+- [ ] Mobile UI
 - [ ] Phone mic formats
 
 ## Definition of Done
-- [ ] Works end-to-end from a phone browser
+- [ ] Works from a phone browser
 
 ## Links
 - Phase: [../phases/PHASE_5_app_deploy.md](../phases/PHASE_5_app_deploy.md)

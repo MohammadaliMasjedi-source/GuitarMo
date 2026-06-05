@@ -8,7 +8,7 @@ Ship it.
 ## Steps
 - [ ] HF Spaces / Docker
 - [ ] PyPI guitarmo
-- [ ] GitHub Actions CI
+- [ ] CI
 
 ## Definition of Done
 - [ ] Public URL + pip install + green CI

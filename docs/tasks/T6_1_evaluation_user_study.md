@@ -7,10 +7,10 @@ Measure quality.
 
 ## Steps
 - [ ] Objective metrics
-- [ ] Blind listening / usability study
+- [ ] Listening/usability study
 
 ## Definition of Done
-- [ ] Metrics + survey results reported
+- [ ] Metrics + survey reported
 
 ## Links
 - Phase: [../phases/PHASE_6_release.md](../phases/PHASE_6_release.md)

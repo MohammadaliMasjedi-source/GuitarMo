@@ -10,7 +10,7 @@ Learn idiomatic voicings.
 - [ ] Sample voicings
 
 ## Definition of Done
-- [ ] Voicings look idiomatic to a guitarist
+- [ ] Voicings look idiomatic
 
 ## Links
 - Phase: [../phases/PHASE_4_arrangement.md](../phases/PHASE_4_arrangement.md)

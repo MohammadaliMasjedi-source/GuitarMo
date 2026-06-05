@@ -6,8 +6,8 @@
 Play-along.
 
 ## Steps
-- [ ] Highlight notes
-- [ ] Tempo/transpose controls
+- [ ] Note highlight
+- [ ] Tempo/transpose
 
 ## Definition of Done
 - [ ] Synchronized audio + notation

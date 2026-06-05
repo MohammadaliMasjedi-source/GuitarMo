@@ -6,12 +6,12 @@
 Pure-Python pitch/chord/scale helpers.
 
 ## Steps
-- [x] Pitch classes & note names
-- [x] Chord interval tables + labels
-- [x] Scale builders
+- [x] Pitch classes & names
+- [x] Chord tables + labels
+- [x] Scales
 
 ## Definition of Done
-- [x] chord_pcs / chord_label / scale_pcs unit-tested
+- [x] chord_pcs/chord_label/scale_pcs tested
 
 ## Links
 - Phase: [../phases/PHASE_0_foundation.md](../phases/PHASE_0_foundation.md)

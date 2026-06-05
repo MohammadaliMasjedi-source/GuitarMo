@@ -6,12 +6,12 @@
 Full fretboard graph DP.
 
 ## Steps
-- [ ] Joint melody+chord stream
+- [ ] Joint stream
 - [ ] Playability cost
 - [ ] Remove 2-string fold
 
 ## Definition of Done
-- [ ] Fewer shifts, wider range than heuristic
+- [ ] Fewer shifts, wider range
 
 ## Links
 - Phase: [../phases/PHASE_4_arrangement.md](../phases/PHASE_4_arrangement.md)

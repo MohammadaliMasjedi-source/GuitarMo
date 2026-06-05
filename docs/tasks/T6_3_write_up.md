@@ -6,7 +6,7 @@
 Communicate it.
 
 ## Steps
-- [ ] Technical report / blog / paper draft
+- [ ] Report/blog/paper draft
 - [ ] Diagrams
 
 ## Definition of Done

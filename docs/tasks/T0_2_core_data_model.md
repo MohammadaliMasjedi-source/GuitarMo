@@ -6,13 +6,13 @@
 Define the dataclasses every stage shares.
 
 ## Steps
-- [x] Note / Melody / ChordSpan / PluckEvent
-- [x] Standard tuning constants
-- [x] Beats-based timing convention
+- [x] Note/Melody/ChordSpan/PluckEvent
+- [x] Tuning constants
+- [x] Beats-based timing
 
 ## Definition of Done
-- [x] Types importable and documented
-- [x] Used across the pipeline
+- [x] Types importable + documented
+- [x] Used across pipeline
 
 ## Links
 - Phase: [../phases/PHASE_0_foundation.md](../phases/PHASE_0_foundation.md)

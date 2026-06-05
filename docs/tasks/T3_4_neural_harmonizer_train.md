@@ -8,7 +8,7 @@ Train seq2seq melody->chords on RTX-3090.
 ## Steps
 - [ ] Transformer/BiLSTM
 - [ ] Style+difficulty conditioning
-- [ ] Train + log curves
+- [ ] Train
 
 ## Definition of Done
 - [ ] Trained weights + curves

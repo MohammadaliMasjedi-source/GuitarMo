@@ -7,7 +7,7 @@ Make renders musical.
 
 ## Steps
 - [ ] Style idioms
-- [ ] Cadential rubato
+- [ ] Rubato
 - [ ] Velocity shaping
 
 ## Definition of Done

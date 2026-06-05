@@ -102,11 +102,21 @@ This is a **phased, research-grade** project. Track it here:
 
 - 🗺️ **[docs/ROADMAP.md](docs/ROADMAP.md)** — all phases at a glance
 - ✅ **[docs/PROGRESS.md](docs/PROGRESS.md)** — live progress tracker (per phase / sub-phase, with Definition of Done)
+- 🌟 **[docs/VISION_AND_QUALITY.md](docs/VISION_AND_QUALITY.md)** — the plan to make it paper-, presentation- & career-grade
 - 📂 **[docs/phases/](docs/phases/)** — one document per phase
 - 🗃️ **[docs/tasks/](docs/tasks/)** — one card per task
 - 🔬 **[docs/RESEARCH.md](docs/RESEARCH.md)** — cited literature review
 - 🧩 **[docs/ENGINES.md](docs/ENGINES.md)** — open-source engines we build on
 - 📊 **[docs/DATASETS.md](docs/DATASETS.md)** — data for the trainable models
+
+### 📺 Live dashboard & auto-sync
+- **`Dashboard.bat`** → a live dashboard (phases, progress rings, task board) that
+  bakes the **local** repo state and pulls **online** GitHub activity live
+  (auto-refreshing). See [dashboard/](dashboard/).
+- **`Sync.bat`** → regenerates task cards, `PROGRESS.md`, the dashboard and the
+  Obsidian note from the single source of truth (`project_plan.py`), then commits
+  & pushes **only when something changed**. Schedule it with
+  `tools/install_schedule.ps1` for hands-off updates.
 
 **Current status:** Phase 0 & 1 (rule-based MVP) complete and tested.
 Next: Phase 2 (pitch accuracy with CREPE/basic-pitch) and Phase 3 (a *trained*
@@ -118,10 +128,15 @@ neural harmonizer).
 GuitarMo/
 ├── guitarmo/            # the engine (Python package)
 ├── app.py               # Gradio web app
+├── project_plan.py      # single source of truth (phases, tasks, DoD, status)
+├── Dashboard.bat        # build + open the live dashboard
+├── Sync.bat             # regenerate docs/Obsidian/dashboard + push if changed
+├── dashboard/           # live dashboard builder
+├── tools/               # sync.py, update_obsidian.py, scheduler installer
 ├── examples/            # demo generator + sample audio + outputs
 ├── tests/               # pytest suite
 ├── training/            # scaffold for the trainable models (Phase 3+)
-├── docs/                # roadmap, phases, tasks, research, datasets
+├── docs/                # roadmap, phases, tasks, research, datasets, vision
 ├── requirements.txt
 └── pyproject.toml
 ```

@@ -7,10 +7,10 @@ Make it usable.
 
 ## Steps
 - [x] argparse CLI + --record
-- [x] Gradio app (record/upload)
+- [x] Gradio app
 
 ## Definition of Done
-- [x] python app.py and python -m guitarmo both run
+- [x] app.py and python -m guitarmo both run
 
 ## Links
 - Phase: [../phases/PHASE_1_mvp.md](../phases/PHASE_1_mvp.md)

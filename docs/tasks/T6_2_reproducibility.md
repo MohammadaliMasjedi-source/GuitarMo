@@ -7,7 +7,7 @@ Make it repeatable.
 
 ## Steps
 - [ ] Configs/seeds/model cards
-- [ ] Dataset manifests
+- [ ] Manifests
 
 ## Definition of Done
 - [ ] Fresh machine reproduces model + figures

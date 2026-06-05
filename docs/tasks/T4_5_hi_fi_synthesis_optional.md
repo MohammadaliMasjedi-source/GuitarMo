@@ -10,7 +10,7 @@ Optional better audio.
 - [ ] --synth switch
 
 ## Definition of Done
-- [ ] Optional sf2|ks backend; KS still default
+- [ ] Optional sf2|ks backend; KS default
 
 ## Links
 - Phase: [../phases/PHASE_4_arrangement.md](../phases/PHASE_4_arrangement.md)

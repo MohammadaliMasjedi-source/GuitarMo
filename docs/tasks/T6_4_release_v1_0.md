@@ -8,7 +8,7 @@ Tag the milestone.
 ## Steps
 - [ ] CHANGELOG + CITATION
 - [ ] SemVer tag
-- [ ] Archive demo + weights
+- [ ] Archive
 
 ## Definition of Done
 - [ ] v1.0.0 tagged

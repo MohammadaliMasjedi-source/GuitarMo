@@ -7,7 +7,7 @@ Wire model into the pipeline.
 
 ## Steps
 - [ ] --harmonizer ml|rules
-- [ ] Ship weights (HF/release)
+- [ ] Ship weights
 
 ## Definition of Done
 - [ ] ml backend works e2e; rules still default

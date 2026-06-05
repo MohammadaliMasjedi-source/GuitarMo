@@ -7,10 +7,10 @@ Estimate key from the note stream.
 
 ## Steps
 - [x] Duration-weighted PC histogram
-- [x] Correlate vs 24 KK profiles
+- [x] Correlate vs KK profiles
 
 ## Definition of Done
-- [x] C-major and A-minor fixtures pass
+- [x] C-major & A-minor fixtures pass
 
 ## Links
 - Phase: [../phases/PHASE_1_mvp.md](../phases/PHASE_1_mvp.md)

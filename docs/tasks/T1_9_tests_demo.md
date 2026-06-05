@@ -7,11 +7,11 @@ Lock in correctness.
 
 ## Steps
 - [x] pytest unit + e2e
-- [x] Microphone-free example generator
+- [x] Mic-free example generator
 
 ## Definition of Done
 - [x] pytest green
-- [x] make_example.py runs end-to-end
+- [x] make_example.py runs e2e
 
 ## Links
 - Phase: [../phases/PHASE_1_mvp.md](../phases/PHASE_1_mvp.md)

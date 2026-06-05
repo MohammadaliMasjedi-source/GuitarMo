@@ -7,7 +7,7 @@ Measure accuracy objectively.
 
 ## Steps
 - [ ] Synthetic ground truth
-- [ ] mir_eval metrics
+- [ ] mir_eval
 - [ ] Per-backend report
 
 ## Definition of Done

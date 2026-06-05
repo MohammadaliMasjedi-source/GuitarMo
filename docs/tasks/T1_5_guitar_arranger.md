@@ -6,8 +6,8 @@
 Map melody+chords to a playable fretboard.
 
 ## Steps
-- [x] DP melody fingering
-- [x] Chord voicings on bass strings
+- [x] DP fingering
+- [x] Chord voicings
 - [x] Register separation
 
 ## Definition of Done
