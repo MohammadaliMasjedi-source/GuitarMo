@@ -1,33 +1,22 @@
-# Register a Windows Scheduled Task that keeps GuitarMo's docs, Obsidian note
-# and dashboard in sync and pushes plan changes to GitHub automatically.
-#
-# Runs Sync.bat at logon and every 4 hours. Sync only commits/pushes when
+# Register a per-user Windows Scheduled Task (no admin needed) that runs
+# Sync.bat every 4 hours while you are logged on. Sync only commits/pushes when
 # something actually changed, so this is a no-op until you edit project_plan.py.
 #
 #   Install :  powershell -ExecutionPolicy Bypass -File tools\install_schedule.ps1
-#   Remove  :  Unregister-ScheduledTask -TaskName "GuitarMo Sync" -Confirm:$false
+#   Remove  :  schtasks /Delete /TN "GuitarMo Sync" /F
+#
+# Notes:
+# - Uses `cmd /c` with doubled quotes so paths with spaces are handled correctly
+#   (PowerShell's native-arg quoting mangles schtasks otherwise).
+# - An at-logon trigger (/SC ONLOGON) needs an elevated shell; the 4-hourly
+#   trigger below works without admin and is enough to keep things in sync.
 
-$ErrorActionPreference = "Stop"
 $repo = Split-Path -Parent $PSScriptRoot
 $bat  = Join-Path $repo "Sync.bat"
-$name = "GuitarMo Sync"
-
 if (-not (Test-Path $bat)) { throw "Sync.bat not found at $bat" }
 
-$action  = New-ScheduledTaskAction -Execute $bat -WorkingDirectory $repo
-$atLogon = New-ScheduledTaskTrigger -AtLogOn
-$daily   = New-ScheduledTaskTrigger -Once -At (Get-Date).Date.AddHours(9) `
-           -RepetitionInterval (New-TimeSpan -Hours 4) `
-           -RepetitionDuration (New-TimeSpan -Days 3650)
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable `
-            -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries `
-            -ExecutionTimeLimit (New-TimeSpan -Minutes 15)
+cmd /c "schtasks /Create /TN ""GuitarMo Sync"" /TR ""$bat"" /SC HOURLY /MO 4 /F"
 
-try { Unregister-ScheduledTask -TaskName $name -Confirm:$false } catch {}
-
-Register-ScheduledTask -TaskName $name -Action $action `
-  -Trigger @($atLogon, $daily) -Settings $settings `
-  -Description "Keep GuitarMo docs/Obsidian/dashboard in sync and push plan changes." | Out-Null
-
-Write-Output "Registered scheduled task '$name' (at logon + every 4h)."
-Write-Output "Remove with: Unregister-ScheduledTask -TaskName '$name' -Confirm:`$false"
+Write-Output ""
+Write-Output "Installed scheduled task 'GuitarMo Sync' (every 4 hours)."
+Write-Output "Remove with:  schtasks /Delete /TN ""GuitarMo Sync"" /F"
