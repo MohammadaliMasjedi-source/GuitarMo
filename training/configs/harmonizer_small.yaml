@@ -1,0 +1,27 @@
+# Example training config for the neural harmonizer (Phase 3.4) - SCAFFOLD.
+name: harmonizer_small
+
+data:
+  processed_dir: processed
+  augment_transpose: true        # transpose to all 12 keys
+  beats_per_chord: 2
+
+model:
+  type: transformer              # transformer | bilstm
+  d_model: 256
+  layers: 4
+  heads: 8
+  dropout: 0.1
+  condition_on: [style, level]   # difficulty- and style-aware
+
+train:
+  seed: 1234
+  batch_size: 64
+  lr: 0.0003
+  max_epochs: 100
+  early_stop_metric: val_chord_accuracy
+  device: cuda                   # RTX-3090 (ISSE)
+
+eval:
+  metrics: [chord_accuracy, chord_tone_coverage]
+  baseline: rules

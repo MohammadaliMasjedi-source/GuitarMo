@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use GuitarMo, please cite it."
+title: "GuitarMo: Sing a melody, get a classical-guitar arrangement"
+authors:
+  - family-names: Masjedi
+    given-names: Mohammadali
+version: 0.1.0
+date-released: 2026-06-05
+license: MIT
+repository-code: "https://github.com/MohammadaliMasjedi-source/GuitarMo"
+keywords:
+  - music information retrieval
+  - automatic harmonization
+  - guitar arrangement
+  - pitch tracking

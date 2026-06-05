@@ -1,0 +1,15 @@
+# --- Optional ML / research extras (Phases 2-3) ---
+# Install with:  pip install -r requirements-ml.txt
+# Heavy dependencies kept OUT of the base install on purpose.
+
+# Phase 2 - pitch & rhythm accuracy
+torchcrepe>=0.0.22       # CREPE f0 (PyTorch)
+basic-pitch>=0.3.0       # Spotify note transcription
+mir_eval>=0.7            # transcription metrics
+# madmom>=0.16.1         # onsets/beats (install from source on py3.12 if needed)
+
+# Phase 3 - trained harmonizer
+torch>=2.1               # neural harmonizer
+hmmlearn>=0.3            # MySong-style HMM baseline
+mirdata>=0.3             # dataset loaders (GuitarSet, etc.)
+pyyaml>=6.0              # training configs

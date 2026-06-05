@@ -1,0 +1,14 @@
+# --- GuitarMo runtime dependencies ---
+numpy>=1.26,<2.2
+scipy>=1.11
+librosa>=0.10.2      # pitch tracking (pYIN), beat/tempo, chroma
+soundfile>=0.12.1    # WAV read/write
+music21>=9.1         # music theory + MusicXML / notation export
+pretty_midi>=0.2.10  # MIDI export
+gradio>=4.44         # web UI (record / upload -> tab + audio)
+
+# Optional: microphone capture from the CLI (browser handles it in the web app)
+sounddevice>=0.4.6
+
+# --- dev / tests ---
+pytest>=7.4

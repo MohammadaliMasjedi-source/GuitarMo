@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "guitarmo"
+version = "0.1.0"
+description = "Sing a melody, get a classical-guitar arrangement (tab + MIDI + MusicXML + audio)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Mohammadali Masjedi" }]
+keywords = ["music", "guitar", "transcription", "harmonization", "MIR", "audio"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+]
+dependencies = [
+    "numpy>=1.26,<2.2",
+    "scipy>=1.11",
+    "librosa>=0.10.2",
+    "soundfile>=0.12.1",
+    "music21>=9.1",
+    "pretty_midi>=0.2.10",
+]
+
+[project.optional-dependencies]
+app = ["gradio>=4.44"]
+mic = ["sounddevice>=0.4.6"]
+ml = ["torch>=2.1", "torchcrepe>=0.0.22", "basic-pitch>=0.3", "hmmlearn>=0.3", "mir_eval>=0.7"]
+dev = ["pytest>=7.4"]
+
+[project.urls]
+Homepage = "https://github.com/MohammadaliMasjedi-source/GuitarMo"
+Repository = "https://github.com/MohammadaliMasjedi-source/GuitarMo"
+
+[project.scripts]
+guitarmo = "guitarmo.cli:main"
+
+[tool.setuptools]
+packages = ["guitarmo"]
