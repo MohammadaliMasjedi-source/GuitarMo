@@ -1,0 +1,80 @@
+{
+  "schema": "mc-project/v1",
+  "id": "Cadenza",
+  "name": "GuitarMo",
+  "emoji": "🎸",
+  "category": "App · Music",
+  "priority": "med",
+  "private": false,
+  "status": "active",
+  "tagline": "Sing → classical-guitar transcription.",
+
+  "progress": null,
+  "currentPhase": "p2",
+  "nextAction": "Add pluggable pitch backends with a CREPE option and a pYIN fallback (sub-phase 2.1).",
+
+  "links": {
+    "github": "https://github.com/MohammadaliMasjedi-source/GuitarMo",
+    "dashboard": null,
+    "board": null,
+    "obsidian": null,
+    "docs": "PROJECT.md"
+  },
+
+  "phases": [
+    {
+      "id": "p1", "title": "Foundation & rule-based MVP", "status": "done",
+      "subphases": [
+        { "title": "Repo scaffold, data model & music-theory utilities", "done": true },
+        { "title": "Pitch tracking + transcription (pYIN) and key detection", "done": true },
+        { "title": "Rule-based 3-tier harmonizer + style engine", "done": true },
+        { "title": "Guitar arranger + Karplus–Strong synthesis", "done": true },
+        { "title": "Notation export (ASCII tab / MIDI / MusicXML)", "done": true },
+        { "title": "CLI + Gradio web app, pytest suite & demo", "done": true }
+      ]
+    },
+    {
+      "id": "p2", "title": "Pitch accuracy & data-driven harmonization", "status": "active",
+      "subphases": [
+        { "title": "Pluggable pitch backends + CREPE (pYIN fallback)", "done": false },
+        { "title": "basic-pitch backend behind same interface", "done": false },
+        { "title": "Onset / beat / meter accuracy + robustness", "done": false },
+        { "title": "Evaluation harness comparing backends", "done": false },
+        { "title": "Train neural harmonizer, beat rule-based baseline", "done": false },
+        { "title": "Integrate ML harmonizer as optional backend", "done": false }
+      ]
+    },
+    {
+      "id": "p3", "title": "Expressive arrangement & synthesis", "status": "todo",
+      "subphases": [
+        { "title": "Optimal fingering solver", "done": false },
+        { "title": "Data-driven voicings / idiomatic tab", "done": false },
+        { "title": "Counter-melody / walking bass", "done": false },
+        { "title": "Expression (ornaments / dynamics)", "done": false },
+        { "title": "Optional hi-fi synthesis backend", "done": false }
+      ]
+    },
+    {
+      "id": "p4", "title": "App, export, evaluation & release", "status": "todo",
+      "subphases": [
+        { "title": "Web app polish + synced playback", "done": false },
+        { "title": "In-browser notation + PDF export", "done": false },
+        { "title": "Deploy hosted demo + pip install + CI", "done": false },
+        { "title": "Evaluation, user study & reproducibility", "done": false },
+        { "title": "Write-up and tagged v1.0 release", "done": false }
+      ]
+    }
+  ],
+
+  "swot": {
+    "strengths": ["Unique sing→classical-guitar angle", "Working, tested end-to-end MVP", "Transparent, dependency-light pipeline (no soundfonts/binaries)"],
+    "weaknesses": ["Heuristic pitch/harmony, no trained models yet", "No hosted demo or packaging", "Single-platform tooling (Windows .bat scripts)"],
+    "opportunities": ["Music-education market", "Plug in SOTA MIR engines (CREPE, basic-pitch)", "Research-grade write-up / paper"],
+    "threats": ["Established transcription apps", "Quality bar for real sung input is high"]
+  },
+
+  "decisions": [
+    { "date": "2026-06-05", "decision": "Ship a transparent rule-based MVP first, then progressively replace heuristics with trained models", "why": "Gives an immediately useful baseline and a reference to measure learned components against", "rejected": ["ML-first approach"] },
+    { "date": "2026-06-05", "decision": "Synthesize guitar with Karplus–Strong instead of soundfonts", "why": "Keeps the pipeline dependency-light with no external binaries", "rejected": ["soundfont / sf2 synthesis"] }
+  ]
+}
