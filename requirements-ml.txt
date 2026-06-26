@@ -3,7 +3,8 @@
 # Heavy dependencies kept OUT of the base install on purpose.
 
 # Phase 2 - pitch & rhythm accuracy
-torchcrepe>=0.0.22       # CREPE f0 (PyTorch)
+crepe>=0.0.12            # CREPE f0 (TensorFlow); enables the "crepe" pitch backend
+tensorflow>=2.12         # CREPE runtime (CPU build is fine)
 basic-pitch>=0.3.0       # Spotify note transcription
 mir_eval>=0.7            # transcription metrics
 # madmom>=0.16.1         # onsets/beats (install from source on py3.12 if needed)

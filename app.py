@@ -14,10 +14,16 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import gradio as gr
 
-from guitarmo import LEVELS, list_styles, process
+from guitarmo import LEVELS, list_backends, list_styles, process
 
 _STYLES = list_styles()
 _STYLE_CHOICES = [(meta["display"], name) for name, meta in _STYLES.items()]
+
+_BACKENDS = list_backends()
+_BACKEND_CHOICES = [
+    (meta["display"] + ("" if meta["available"] else "  (not installed)"), name)
+    for name, meta in _BACKENDS.items()
+]
 
 _INTRO = """
 # 🎸 GuitarMo
@@ -36,11 +42,12 @@ _TIPS = """
 """
 
 
-def run(audio_path, style, level):
+def run(audio_path, style, level, backend):
     if not audio_path:
         raise gr.Error("Please record or upload a short sung melody first.")
     try:
-        res = process(audio_path, style=style, level=level)
+        res = process(audio_path, style=style, level=level,
+                      pitch_backend=backend)
     except ValueError as exc:
         raise gr.Error(str(exc))
 
@@ -62,6 +69,8 @@ def build():
                                     label="Style")
                 level = gr.Radio(list(LEVELS), value="normal",
                                  label="Difficulty")
+                backend = gr.Dropdown(_BACKEND_CHOICES, value="pyin",
+                                      label="Pitch engine")
                 go = gr.Button("🎼 Arrange it", variant="primary")
                 gr.Markdown(_TIPS)
             with gr.Column(scale=2):
@@ -70,7 +79,7 @@ def build():
                 tab = gr.Code(label="Tablature", language=None)
                 files = gr.File(label="Downloads (MIDI · MusicXML · tab)",
                                 file_count="multiple")
-        go.click(run, inputs=[audio, style, level],
+        go.click(run, inputs=[audio, style, level, backend],
                  outputs=[out_audio, tab, info, files])
     return demo
 

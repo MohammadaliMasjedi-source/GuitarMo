@@ -9,11 +9,14 @@ from .arrange import arrange
 from .audio_io import load_audio, save_wav
 from .harmony import harmonize
 from .key import detect_key
+from .pitch_backends import (DEFAULT_BACKEND, available_backends, get_backend,
+                             list_backends)
 from .render import render
 from .styles import LEVELS, get_style, style_names
 from .transcribe import transcribe
 
-__all__ = ["process", "Result", "list_styles", "LEVELS"]
+__all__ = ["process", "Result", "list_styles", "list_backends",
+           "available_backends", "DEFAULT_BACKEND", "LEVELS"]
 
 
 @dataclass
@@ -63,8 +66,11 @@ def _build_header(key, melody, style, level, chords):
 
 
 def process(audio_path, style="classical", level="normal", out_dir=None,
-            sr=22050, tempo=None, reverb=True):
+            sr=22050, tempo=None, reverb=True, pitch_backend=None):
     """Run the full pipeline and write wav / midi / musicxml / tab to disk.
+
+    ``pitch_backend`` picks the f0 estimator (``"pyin"`` default, ``"crepe"``
+    when the ML extras are installed). See :mod:`guitarmo.pitch_backends`.
 
     Returns a :class:`Result`.
     """
@@ -73,7 +79,7 @@ def process(audio_path, style="classical", level="normal", out_dir=None,
     style_obj = get_style(style)
 
     y, sr = load_audio(audio_path, sr=sr)
-    melody = transcribe(y, sr, tempo=tempo)
+    melody = transcribe(y, sr, tempo=tempo, pitch_backend=pitch_backend)
     key = detect_key(melody.notes)
     spans = harmonize(melody, key, level=level, style=style_obj)
     events = arrange(melody, spans, level=level, style=style_obj)

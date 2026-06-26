@@ -11,7 +11,8 @@ import librosa
 import numpy as np
 
 from .core import Melody, Note
-from .pitch import DEFAULT_HOP, estimate_f0, hz_to_midi
+from .pitch import DEFAULT_HOP, hz_to_midi
+from .pitch_backends import PitchBackend, get_backend
 
 
 def _segment_notes(times, midi_track, voiced_flag, frame_period,
@@ -85,16 +86,23 @@ def _note_velocity(y, sr, start_sec, end_sec):
 
 
 def transcribe(y, sr, tempo=None, grid=0.5, beats_per_bar=4,
-               hop_length=DEFAULT_HOP):
+               hop_length=DEFAULT_HOP, pitch_backend=None):
     """Transcribe a mono signal ``y`` into a :class:`Melody`.
 
     ``grid`` is the quantization resolution in beats (0.5 == eighth notes).
     Pass an explicit ``tempo`` (BPM) to skip automatic tempo detection.
+
+    ``pitch_backend`` selects the f0 estimator: a backend name (e.g. ``"pyin"``
+    or ``"crepe"``), a :class:`~guitarmo.pitch_backends.PitchBackend` instance,
+    or ``None`` for the default (pYIN). See :mod:`guitarmo.pitch_backends`.
     """
-    times, f0, voiced_flag, _ = estimate_f0(y, sr, hop_length=hop_length)
-    midi_track = hz_to_midi(f0)
-    frame_period = (float(times[1] - times[0]) if len(times) > 1
-                    else hop_length / sr)
+    backend = (pitch_backend if isinstance(pitch_backend, PitchBackend)
+               else get_backend(pitch_backend))
+    pr = backend.track(y, sr, hop_length=hop_length)
+    times = pr.times
+    midi_track = hz_to_midi(pr.f0_hz)
+    voiced_flag = pr.voiced_flag
+    frame_period = pr.frame_period or (hop_length / sr)
 
     raw = _segment_notes(times, midi_track, voiced_flag, frame_period)
     if not raw:

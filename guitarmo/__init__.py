@@ -16,10 +16,12 @@ from .key import Key, detect_key  # noqa: F401
 
 # The pipeline pulls in librosa / music21; import lazily-friendly but eager here
 # since those are declared runtime dependencies.
-from .pipeline import LEVELS, Result, list_styles, process  # noqa: F401, E402
+from .pipeline import (DEFAULT_BACKEND, LEVELS, Result,  # noqa: F401, E402
+                       available_backends, list_backends, list_styles, process)
 
 __all__ = [
     "process", "Result", "list_styles", "LEVELS",
+    "list_backends", "available_backends", "DEFAULT_BACKEND",
     "Note", "Melody", "ChordSpan", "PluckEvent", "STANDARD_TUNING",
     "Key", "detect_key", "__version__",
 ]

@@ -23,9 +23,9 @@ state-of-the-art open-source engines and trained models.
 - [x] Notation export (ASCII tab / MIDI / MusicXML)
 - [x] CLI + Gradio web app, pytest suite & demo
 
-### Phase 2 — Pitch accuracy & data-driven harmonization  🔵 0%  ← current
-- [ ] Pluggable pitch backends + CREPE (pYIN fallback)   ← next action
-- [ ] basic-pitch backend behind same interface
+### Phase 2 — Pitch accuracy & data-driven harmonization  🔵 ~17%  ← current
+- [x] Pluggable pitch backends + CREPE (pYIN fallback)
+- [ ] basic-pitch backend behind same interface   ← next action
 - [ ] Onset / beat / meter accuracy + robustness
 - [ ] Evaluation harness comparing backends
 - [ ] Train neural harmonizer, beat rule-based baseline
@@ -68,4 +68,4 @@ basic-pitch, madmom) and a trained neural harmonizer (MySong/DeepBach lineage).
 - **Threats** — Established transcription apps; high quality bar for real sung input.
 
 ## Stats
-3 commits · last touched 2026-06-05 · Phases 0–1 (rule-based MVP) complete and tested · 11 tests passing.
+Phases 0–1 (rule-based MVP) complete · Phase 2 started (pluggable pitch backends) · 22 tests passing.

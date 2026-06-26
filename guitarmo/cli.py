@@ -12,7 +12,7 @@ import argparse
 import sys
 import tempfile
 
-from . import LEVELS, list_styles, process
+from . import LEVELS, list_backends, list_styles, process
 from .styles import style_names
 
 
@@ -24,6 +24,10 @@ def main(argv=None):
     p.add_argument("input", nargs="?", help="input audio file (WAV recommended)")
     p.add_argument("--style", default="classical", choices=style_names())
     p.add_argument("--level", default="normal", choices=list(LEVELS))
+    p.add_argument("--pitch-backend", default=None,
+                   choices=sorted(list_backends()),
+                   help="f0 estimator to use (default: pyin). 'crepe' needs the "
+                        "ML extras and falls back to pyin when unavailable.")
     p.add_argument("--out", default=None, help="output directory")
     p.add_argument("--tempo", type=float, default=None,
                    help="force a tempo in BPM (skip auto-detection)")
@@ -31,11 +35,20 @@ def main(argv=None):
                    help="record from the microphone for N seconds, then arrange")
     p.add_argument("--no-reverb", action="store_true")
     p.add_argument("--list-styles", action="store_true")
+    p.add_argument("--list-backends", action="store_true",
+                   help="list available pitch backends and exit")
     args = p.parse_args(argv)
 
     if args.list_styles:
         for name, meta in list_styles().items():
             print(f"  {name:12s} {meta['display']:24s} {meta['description']}")
+        return 0
+
+    if args.list_backends:
+        for name, meta in list_backends().items():
+            mark = "available" if meta["available"] else "not installed"
+            print(f"  {name:8s} [{mark:13s}] {meta['display']:18s} "
+                  f"{meta['description']}")
         return 0
 
     audio_path = args.input
@@ -50,7 +63,8 @@ def main(argv=None):
         p.error("provide an input file or use --record SECONDS")
 
     res = process(audio_path, style=args.style, level=args.level,
-                  out_dir=args.out, tempo=args.tempo, reverb=not args.no_reverb)
+                  out_dir=args.out, tempo=args.tempo, reverb=not args.no_reverb,
+                  pitch_backend=args.pitch_backend)
     print(res.summary())
     print()
     print(res.tab_text)

@@ -11,7 +11,7 @@
 
   "progress": null,
   "currentPhase": "p2",
-  "nextAction": "Add pluggable pitch backends with a CREPE option and a pYIN fallback (sub-phase 2.1).",
+  "nextAction": "Add a basic-pitch backend behind the same PitchBackend interface (sub-phase 2.2).",
 
   "links": {
     "github": "https://github.com/MohammadaliMasjedi-source/GuitarMo",
@@ -36,7 +36,7 @@
     {
       "id": "p2", "title": "Pitch accuracy & data-driven harmonization", "status": "active",
       "subphases": [
-        { "title": "Pluggable pitch backends + CREPE (pYIN fallback)", "done": false },
+        { "title": "Pluggable pitch backends + CREPE (pYIN fallback)", "done": true },
         { "title": "basic-pitch backend behind same interface", "done": false },
         { "title": "Onset / beat / meter accuracy + robustness", "done": false },
         { "title": "Evaluation harness comparing backends", "done": false },

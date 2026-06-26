@@ -5,7 +5,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/);
 versions follow [SemVer](https://semver.org/).
 
 ## [Unreleased]
-- Phase 2: pluggable pitch backends (CREPE, basic-pitch), madmom beats, eval harness.
+### Added — Phase 2 (in progress)
+- Pluggable pitch-backend layer (`guitarmo.pitch_backends`): a `PitchBackend`
+  interface, a `PitchResult` return type, and a name-keyed registry.
+- pYIN backend (default, always available) and a CREPE deep-CNN backend that
+  lazily loads the optional `crepe`/`tensorflow` extras and transparently falls
+  back to pYIN when they are not installed.
+- `transcribe()` / `process()` take a `pitch_backend` argument; the CLI gains
+  `--pitch-backend` and `--list-backends`; the web app gains a "Pitch engine"
+  picker. 11 new tests (22 total).
+
+### Planned
+- Phase 2: basic-pitch backend, madmom beats, evaluation harness.
 - Phase 3: trained neural harmonizer + HMM baseline.
 
 ## [0.1.0] — 2026-06-05
